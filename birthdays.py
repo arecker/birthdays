@@ -36,19 +36,7 @@ def build_message(name, message_url):
     return message
 
 
-def post(name, section, encoding='utf-8'):
-    headers = {'Content-type': 'application/json'}
-    data = {
-        'username': section['username'],
-        'channel': section['channel'],
-        'icon_emoji': section['emoji'],
-        'text': build_message(name=name, message_url=section['message_url']),
-    }
-    data = json.dumps(data)
-    data = data.encode(encoding)
-    request = urllib.request.Request(headers=headers,
-                                     url=section['webhook_url'],
-                                     data=data)
+def open_request(request, data, encoding):
     try:
         response = urllib.request.urlopen(request)
         response_data = response.read().decode(encoding)
@@ -65,6 +53,22 @@ def post(name, section, encoding='utf-8'):
 
         logging.error('webhook returned HTTP %d: %s, data: %s', e.code,
                       e.reason, error_data)
+
+
+def post(name, section, encoding='utf-8'):
+    headers = {'Content-type': 'application/json'}
+    data = {
+        'username': section['username'],
+        'channel': section['channel'],
+        'icon_emoji': section['emoji'],
+        'text': build_message(name=name, message_url=section['message_url']),
+    }
+    data = json.dumps(data)
+    data = data.encode(encoding)
+    request = urllib.request.Request(headers=headers,
+                                     url=section['webhook_url'],
+                                     data=data)
+    open_request(request, data, encoding=encoding)
 
 
 def main():
