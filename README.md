@@ -23,11 +23,11 @@ message_url = https://youtu.be/Y6JnYnA9Tzo
 
 Then run the script every day!
 
-![](./screenshot.png)
-
 ```shell
 CONFIG_FILE_PATH="people.conf" python ./birthdays.py
 ```
+
+![](./screenshot.png)
 
 ## Backup
 
