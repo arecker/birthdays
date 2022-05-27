@@ -75,12 +75,8 @@ def main():
     logging.info('starting script with python %s (%s)',
                  platform.python_version(), sys.executable)
 
-    try:
-        config = load_config(path=os.environ['CONFIG_FILE_PATH'])
-    except KeyError:
-        logging.fatal('CONFIG_FILE_PATH="..." not set!')
-        sys.exit(1)
-
+    config = load_config(
+        path=os.environ.get('CONFIG_FILE_PATH', 'people.conf'))
     today = datetime.date.today()
     logging.info('the current date is %s', today)
 
