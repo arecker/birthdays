@@ -1,7 +1,6 @@
 name: birthday bot
 
 on:
-  push: {}
   schedule:
     - cron: '0 8 * * *'
 
