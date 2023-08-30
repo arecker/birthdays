@@ -10,8 +10,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-logging.basicConfig(stream=sys.stderr,
-                    level=logging.INFO,
+logging.basicConfig(stream=sys.stderr, level=logging.INFO,
                     format='birthdays: %(message)s')
 
 

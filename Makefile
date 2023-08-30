@@ -1,6 +1,8 @@
 .PHONY: all
-all:
-	@echo "no default rule.  Run make load or make save"
+all: venv/bin/python
+
+venv/bin/python:
+	python -m venv --copies ./venv
 
 .PHONY: save
 save:
