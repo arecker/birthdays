@@ -37,7 +37,7 @@ Save configuration to pass.
     saving people.conf to pass://birthdays
     cat people.conf | pass insert -f -m "birthdays"
     Enter contents of birthdays and press Ctrl+D when finished:
-    
+
     [master 4d93d27] Add given password for birthdays to store.
      1 file changed, 0 insertions(+), 0 deletions(-)
      rewrite birthdays.gpg (100%)
