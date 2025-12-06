@@ -1,21 +1,21 @@
-name: birthday bot
+# name: birthday bot
 
-on:
-  schedule:
-    - cron: '0 8 * * *'
+# on:
+#   schedule:
+#     - cron: '0 8 * * *'
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout repo content
+#         uses: actions/checkout@v2
 
-      - name: setup python
-        uses: actions/setup-python@v4
+#       - name: setup python
+#         uses: actions/setup-python@v4
 
-      - name: populate config
-        run: echo "${{ secrets.PEOPLE }}" > people.conf
+#       - name: populate config
+#         run: echo "${{ secrets.PEOPLE }}" > people.conf
 
-      - name: execute script
-        run: python birthdays.py
+#       - name: execute script
+#         run: python birthdays.py
